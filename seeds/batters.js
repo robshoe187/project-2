@@ -1,4 +1,5 @@
 const { Batters } = require('../models');
+//all batters
 
 const batterSeed = [
   {
