@@ -52,6 +52,9 @@ router.get('/:id', (req, res) => {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
+        //const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { posts, loggedIn: true });
+        console.log(data);
         res.json(data);
       })
       .catch(err => {
