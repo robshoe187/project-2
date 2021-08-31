@@ -71,11 +71,13 @@ router.get('/edit/:id', withAuth, (req, res) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         
+        
         res.render('edit-post', {
           post,
           loggedIn: true
-        });
-      } else {
+        }
+      });
+       else {
         res.status(404).end();
       }
     })
