@@ -8,7 +8,8 @@
   <!-- row for player/category search and returned chart -->
   <div class="row">
     <div class="col-sm-12">
-      <input class="form-control basicAutoComplete field" type="text" placeholder="Type in a player's name">
+      <input class="form-control basicAutoComplete field" type="text" placeholder="Type in a player's name"
+        data-url="../../seeds.batters.js" autocomplete="off">
       <input type="submit" id="searchButton" value="Search">
     </div>
   </div>
@@ -21,28 +22,13 @@
       <p>Games played: {{ games_played }}</p>
       <p>Hits: {{ hits }}</p>
       <p>Average: {{ average }}</p>
-      <p>Home runs: {{ home runs }}</p>
+      <p>Home runs: {{ home_runs }}</p>
       <p>RBI: {{ rbi }}</p>
       <!-- {{body}} -->
     </div>
     <!-- chart display, has Chart.js input and placeholder image -->
     <div class="col-sm-6"><canvas id="myChart" width="400" height="400"></canvas></div>
   </div>
-  <!-- row for set a favorite team or player (maybe not in MVP) -->
-  <!-- <div class="row">
-            <div class="col-sm-12">word</div>
-        </div> -->
-  <!-- row for watching-in-real-time adds (PUT route for this) -->
-  {{!-- <div class="row">
-    <div class="col-sm-12">
-      <h3>Watching the game in real time?</h3>
-      <h5>Add tonight's stats!</h5>
-      <div class="col-sm-2"><input type="text" class="field" placeholder="Name"></div>
-      <div class="col-sm-2"><input type="text" class="field" placeholder="How many hits?"></div>
-      <div class="col-sm-1"><input type="text" class="field" placeholder="Any home runs?"></div>
-      <div class="col-sm-1"><input type="text" class="field" placeholder="How many RBI?"></div>
-    </div>
-  </div> --}}
   <!-- row for add a player; hidden div for site admin logins only (POST route for this) -->
   <div class="row">
     <h3>Add a player</h3>
