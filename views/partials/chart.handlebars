@@ -1,0 +1,34 @@
+<div class="col-sm-6">
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+<script src="/javascript/myChart.js"></script>
+
+<script> 
+  const labels = [
+  'Player Hits',
+  'League Average'
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Hits',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [{{ batter.hits }}, 42],
+  }]
+};
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    responsive: false
+  }
+};
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  </script>
