@@ -1,5 +1,5 @@
 <div class="col-sm-6">
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="avgChart" width="400" height="400"></canvas>
 </div>
 
 
@@ -7,28 +7,25 @@
 <script src="/javascript/myChart.js"></script>
 
 <script> 
-  const labels = [
-  'Player Hits',
-  'League Average'
-];
-const data = {
-  labels: labels,
+
+const avgData = {
+  labels: ['Player Average', 'League Average'],
   datasets: [{
-    label: 'Hits',
+    label: 'Batting Average',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [{{ batter.hits }}, 42],
+    data: [{{ batter.average }}, 218],
   }]
 };
-const config = {
+const avgConfig = {
   type: 'bar',
-  data: data,
+  data: avgData,
   options: {
     responsive: false
   }
 };
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config
+  var avgChart = new Chart(
+    document.getElementById('avgChart'),
+    avgConfig
   );
   </script>
