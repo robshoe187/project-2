@@ -53,7 +53,7 @@ router.get('/:id', (req, res) => {
           return;
         }
         //const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+       // res.render('dashboard', { posts, loggedIn: true });
         console.log(data);
         res.json(data);
       })
