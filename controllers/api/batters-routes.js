@@ -4,7 +4,7 @@ const { Batters } = require('../../models');
 
 
 
-//api/batters-route/
+//api/batters/
 
 //get all batters names and id
 router.get('/names', (req, res) => {

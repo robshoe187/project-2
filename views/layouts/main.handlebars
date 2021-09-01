@@ -54,7 +54,7 @@ var batterID = [];
 var playerName = [];
 
 var getNames = function(){
-fetch("/api/batters-route/names")
+fetch("/api/batters/names")
     .then((response) => {
         console.log(response.json().then(
             (data) => { console.log(data) 
@@ -75,7 +75,7 @@ $("#tags").autocomplete({
 }).data("ui-autocomplete")._renderItem = function (ul, item) {
     return $("<li></li>")
         .data("item.autocomplete", item)
-        .append('<div><a class="ac-item-a" href="http://localhost:3001/api/batters-route/'+ batterID[item.label] +'" >'+ item.label + '</a></div>')
+        .append('<div><a class="ac-item-a" href="http://localhost:3001/api/batters/'+ batterID[item.label] +'" >'+ item.label + '</a></div>')
         .appendTo(ul);
 };
 </script>
