@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth.js');
 const { Batters } = require('../../models');
 
 
@@ -88,7 +89,7 @@ router.get('/:id', (req, res) => {
 });
 
 // add new batter to DB if they're not already in there
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Batter.findOrCreate({
     where: {
       name: req.body.name
@@ -103,8 +104,7 @@ router.post('/', (req, res) => {
       rbi: 0
     }
   })
-    .then(data => res.json(data);
-    )
+    .then(data => res.json(data))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
