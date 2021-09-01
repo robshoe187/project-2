@@ -103,13 +103,8 @@ router.post('/', (req, res) => {
       rbi: 0
     }
   })
-    .then(data => {
-      if (req.body.name = true) {
-        res.status(409).json({ message: 'Player is already in our database -- search for him at the top!' });
-        return;
-      }
-      res.json(data);
-    })
+    .then(data => res.json(data);
+    )
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
