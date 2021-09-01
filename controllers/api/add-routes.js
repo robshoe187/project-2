@@ -1,5 +1,5 @@
 const router = require("./user-routes");
-const { Batter } = require('../../models/Batter.js')
+const { Batter } = require('./models/Batter.js')
 
 router.post('/', (req, res) => {
     Batter.create({
@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
     })
         .then(data => {
             res.json(data);
-        });
+        })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
