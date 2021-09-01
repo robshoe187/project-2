@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
         return;
       }
       const batter = data.get({ plain: true });
-      res.render('homepage', { batter, plain: true });
+      res.render('player', { batter, plain: true });
       //console.log(data);
       //res.json(data);
     })
