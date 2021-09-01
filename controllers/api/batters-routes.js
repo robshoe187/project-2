@@ -5,6 +5,27 @@ const { Batters } = require('../../models');
 
 //api/batters-route/
 
+//get all batters names and id
+router.get('/names', (req, res) => {
+  Batters.findAll({
+  attributes: [
+      'id',
+      'name'
+    ],
+  })
+    .then(data => {
+      if (!data) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 //get all batters
 router.get('/', (req, res) => {
   Batters.findAll({
@@ -26,6 +47,7 @@ router.get('/', (req, res) => {
       }
       res.json(data);
     })
+
     .catch(err => {
       console.log(err);
       res.status(500).json(err);

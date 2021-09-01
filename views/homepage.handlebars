@@ -7,12 +7,26 @@
   <article id="intro"></article>
   <!-- row for player/category search and returned chart -->
   <div class="row">
-    <div class="col-sm-12">
-      <input class="form-control basicAutoComplete field" type="text" placeholder="Type in a player's name"
-        data-url="../../seeds/batters.js" autocomplete="off">
+    {{!-- <div class="col-sm-12"> --}}
+        <div class="input-field col s12">
+
+          <!-- jquery autocomplete -->
+          <div class="ui-widget">
+            <label for="tags">Search Player:</label>
+            <input id="tags">
+          </div>
+
+          <!-- materialize autocomplete -->
+          {{!-- <i class="material-icons prefix">Textsms</i>
+ 
+          <input type="text" id="demo-auto" class="autocomplete" placeholder="Player's Name">
+ 
+          <label for="demo-auto">Enter Batter Name</label> --}}
+      {{!-- <input class="form-control basicAutoComplete field" type="text" placeholder="Type in a player's name"
+        data-url="../../seeds/batters.js" autocomplete="off"> --}}
       <input type="submit" id="searchButton" value="Search">
     </div>
-  </div>
+  {{!-- </div> --}}
   <!-- row for player search return and chart display (GET route for this) -->
   <div class="row">
     <!-- player search return, has Handlebars input -->
@@ -29,10 +43,13 @@
       <!-- {{body}} -->
     </div>
     <!-- chart display, has Chart.js input and placeholder image -->
-    <div class="col-sm-6"><canvas id="myChart" width="600" height="400">
+      {{>rbichart}}
+      {{>hitchart}}
+      {{>homerunchart}}
+      {{>averagechart}}
 
-    </canvas></div>
-  </div>
+    </div>
+
   <!-- row for add a player; hidden div for site admin logins only (POST route for this) -->
   <div class="row">
     <h3>Add a player</h3>
