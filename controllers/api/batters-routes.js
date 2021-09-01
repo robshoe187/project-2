@@ -89,8 +89,9 @@ router.get('/:id', (req, res) => {
 });
 
 // add new batter to DB if they're not already in there
-router.post('/', withAuth, (req, res) => {
-  Batter.findOrCreate({
+router.post('/',  (req, res) => {
+  console.log(req.body.name)
+  Batters.findOrCreate({
     where: {
       name: req.body.name
     },
