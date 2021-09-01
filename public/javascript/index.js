@@ -1,27 +1,3 @@
-const playerAddButton = document.querySelector('#addPlayer');
-
-playerAddButton.addEventListener("click," function () => {
-    
-      
-    sequelize.literal()
-    // if(batter = true) {
-    //     alert("He's already in our database -- do a search at top to find him!");
-    //     return;
-    // }
-    // else {
-    //     // actually need a database insertion here
-    //     return {
-    //         name: batter.name,
-    //         team: batter.team,
-    //         games_played: 0,
-    //         hits: 0,
-    //         average: .000,
-    //         home_runs: 0,
-    //         rbi: 0
-        }
-    }
-});
-
 function playerAddHandler(event) {
     event.preventDefault();
   
@@ -39,6 +15,7 @@ function playerAddHandler(event) {
           'Content-Type': 'application/json'
         }
       });
+      console.log(response);
   
       if (response.ok) {
         document.location.reload();
@@ -48,4 +25,4 @@ function playerAddHandler(event) {
     }
   }
   
-  document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+  document.querySelector('#addPlayer').addEventListener('click', playerAddHandler);
