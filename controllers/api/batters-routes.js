@@ -4,7 +4,7 @@ const { Batters } = require('../../models');
 
 
 
-//api/batters-route/
+//api/batters/
 
 //get all batters names and id
 router.get('/names', (req, res) => {
@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
         return;
       }
       const batter = data.get({ plain: true });
-      res.render('homepage', { batter, plain: true });
+      res.render('player', { batter, plain: true });
       //console.log(data);
       //res.json(data);
     })
@@ -89,8 +89,9 @@ router.get('/:id', (req, res) => {
 });
 
 // add new batter to DB if they're not already in there
-router.post('/', withAuth, (req, res) => {
-  Batter.findOrCreate({
+router.post('/',  (req, res) => {
+  console.log(req.body.name)
+  Batters.findOrCreate({
     where: {
       name: req.body.name
     },

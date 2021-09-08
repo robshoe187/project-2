@@ -9,20 +9,24 @@ function playerAddHandler(event) {
       method: 'POST',
       body: JSON.stringify({
         name; addName,
+
         team: addTeam
       }),
       headers: {
         'Content-Type': 'application/json'
       }
+
     })
 
     if (response.ok) {
       let addName = '';
       let addTeam = '';
+
     } else {
       alert(response.statusText);
     }
   }
+
 }
 
 document.querySelector('#addPlayer').addEventListener('click', playerAddHandler);
