@@ -1,35 +1,28 @@
 <div>
   <!-- intro text -->
-  <article id="intro"></article>
+  <article id="intro">Get a look at your favorite offensive player -- or any other hitter in Major League Baseball! Just start a search for any player's name and click the button when you see him. We'll show you what his basic stats are and chart how he ranks against the league average in five key categories.</article>
   <!-- row for player/category search and returned chart -->
   <div class="row">
-    {{!-- <div class="col-sm-12"> --}}
-        <div class="input-field col s12">
+      <div class="input-field col-sm-12">
 
-          <!-- jquery autocomplete -->
-          <div class="ui-widget">
-            <label for="tags">Search Player:</label>
-            <input id="tags">
-          </div>
+        <!-- jquery autocomplete -->
+        <div class="ui-widget">
+          <label for="tags">Search Player:</label>
+          <input id="tags">
+          <input type="submit" id="searchButton" value="Search">
 
-          <!-- materialize autocomplete -->
-          {{!-- <i class="material-icons prefix">Textsms</i>
- 
-          <input type="text" id="demo-auto" class="autocomplete" placeholder="Player's Name">
- 
-          <label for="demo-auto">Enter Batter Name</label> --}}
-      {{!-- <input class="form-control basicAutoComplete field" type="text" placeholder="Type in a player's name"
-        data-url="../../seeds/batters.js" autocomplete="off"> --}}
-      <input type="submit" id="searchButton" value="Search">
+        </div>
+      </div>
+
+    <!-- row for add a player; hidden div for site admin logins only (POST route for this) -->
+    {{#if loggedIn}}
+    <!-- should be adjusted to something like {{if LoggedInAsAdmin}} instead -->
+    <div class="row">
+      <h3>Add a player</h3>
+      <div class="col-sm-3"><input type="text" id="addName" placeholder="Name"></div>
+      <div class="col-sm-3"><input type="text" id="addTeam" placeholder="Team"></div>
+      <div class="col-sm-2"><button id="addPlayer">Click to add</button></div>
     </div>
-  {{!-- </div> --}}
-  <!-- row for player search return and chart display (GET route for this) -->
-
-  <!-- row for add a player; hidden div for site admin logins only (POST route for this) -->
-  <div class="row">
-    <h3>Add a player</h3>
-    <div class="col-sm-2"><input type="text" id="addName" placeholder="Name"></div>
-    <div class="col-sm-2"><input type="text" id="addTeam" placeholder="Team"></div>
-    <button id="addPlayer">Click to add</button>
+    {{else}}
+    {{/if}}
   </div>
-</div>

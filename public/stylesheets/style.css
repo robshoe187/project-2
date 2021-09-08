@@ -23,7 +23,7 @@ header {
     background-image: url("../images/grass.jpg");
     color: yellow;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.699);
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 header h1 {
@@ -45,8 +45,23 @@ header a, a:hover {
     text-decoration: none;
 }
 
+
 nav {
-    float: right;
+    padding: 0 50px 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+}
+
+article {
+    font-weight: bold;
+    padding: 0 20px 0 20px;
+    margin-bottom: 20px;
+}
+
+.ui-widget {
+    padding: 0 20px 0 20px;
+
 }
 
 li {
@@ -64,6 +79,7 @@ li {
 
 input {
     margin-bottom: 10px;
+    width: 250px;
 }
 
 .field {
@@ -74,6 +90,10 @@ input {
 .col-sm-6 {
     margin-left: auto;
     margin-right: auto;
+}
+
+#searchButton {
+    width: 200px;
 }
 
 footer {
