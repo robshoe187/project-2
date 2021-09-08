@@ -93,7 +93,7 @@
     }).data("ui-autocomplete")._renderItem = function (ul, item) {
       return $("<li></li>")
         .data("item.autocomplete", item)
-        .append('<div><a class="ac-item-a" href="http://localhost:3001/api/batters/' + batterID[item.label] + '" >' + item.label + '</a></div>')
+        .append('<div><a class="ac-item-a" href="/api/batters/' + batterID[item.label] + '" >' + item.label + '</a></div>')
         .appendTo(ul);
     };
   </script>
