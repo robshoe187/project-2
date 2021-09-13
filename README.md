@@ -8,3 +8,7 @@ For the front end, we used standard HTML tagging and CSS styling, plus Bootstrap
 On the back end, routes are written to use Express.js to establish the communication between the front and back ends, with the Sequelize package and MySQL2 to enable the database. Authentication is handled with Express's and Sequelize's session capabilities.
 ## Routes
 Routes feature a GET request for the basic search and return. In addition, authenticated users have access to a POST route that enables new players to be added to the database (for example, a player who is called up from the minor leagues can be added in this fashion).
+## Deployed Application
+https://project-2-rs.herokuapp.com/
+
+![image](https://user-images.githubusercontent.com/83672340/133021537-4a7349d4-7546-4c7e-92fd-435e7e30cc52.png)
