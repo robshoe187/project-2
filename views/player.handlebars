@@ -1,11 +1,13 @@
 <div class="row">
-    {{!-- <div class="col-sm-12"> --}}
-  {{!-- </div> --}}
+  {{>searchplayer}}
+</div>
+<div class="row">
+  {{!-- <div class="col-sm-12"> --}}
+    {{!-- </div> --}}
   <!-- row for player search return and chart display (GET route for this) -->
   <div class="row">
     <!-- player search return, has Handlebars input -->
-    <div class="col-sm-6">
-
+    <div class="col-sm-4">
       <h3>{{ batter.name }}</h3>
       <h5>{{ batter.team }}</h5>
       <p>Games played: {{ batter.games_played }}</p>
@@ -13,14 +15,19 @@
       <p>Average: {{ batter.average }}</p>
       <p>Home runs: {{ batter.home_runs }}</p>
       <p>RBI: {{ batter.rbi }}</p>
-
-      <!-- {{body}} -->
     </div>
-    <!-- chart display, has Chart.js input and placeholder image -->
+    <div class="col-sm-4">
       {{>rbichart}}
-      {{>hitchart}}
-      {{>homerunchart}}
-      {{>averagechart}}
-
     </div>
+    <div class="col-sm-4">
+      {{>hitchart}}
+    </div>
+  </div>
+  <!-- {{body}} -->
+  <!-- chart display, has Chart.js input and placeholder image -->
+  <div class="row">
+    <div class="col-sm-6">{{>homerunchart}}</div>
+    <div class="col-sm-6">{{>averagechart}}</div>
+    <!-- {{>allchart}} -->
+  </div>
 </div>
